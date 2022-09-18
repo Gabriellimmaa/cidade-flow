@@ -1,16 +1,15 @@
 .status-member {
     position: fixed;
-    margin: 20px 20px 0 0;
-    top: 120px;
+    margin: 0 20px 0 0;
+    top: 90px;
     right: 0;
 
-    width: 300px;
     height: 52px;
- 
+    gap: 10px;
     border-radius: 6px;
 
     background-color: rgb(46, 48, 51, 0.60);
-    padding: 10px 5px;
+    padding: 10px 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,17 +23,19 @@
     @apply bg-green-500
 }
 
+.status-member p {
+    margin: 0;
+}
+
 .status-member p:nth-child(2) {
     font-family: 'Inter', sans-serif;
     font-weight: bold;
-    margin: 0 10px;
 
     @apply text-gray-200
 }
 
 .status-member p:nth-child(3) {
     font-family: 'Inter', sans-serif;
-    margin: 0;
 
     @apply text-gray-200
 }

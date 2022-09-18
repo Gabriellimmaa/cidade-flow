@@ -43,7 +43,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   color: white;
   font-size: inherit;
   font-weight: inherit;
@@ -72,14 +72,21 @@ p {
 
 body {
   @apply bg-gray-100 text-gray-100;
+  outline: none;
   color: white;
   -webkit-font-smoothing: antialiased;
   background-image: url("./src/assets/img/background.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
+:focus-visible {
+  outline: none !important;
+}
 
 @media screen and (max-width: 1440px) {
 }

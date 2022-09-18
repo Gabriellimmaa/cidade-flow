@@ -30,4 +30,59 @@
   </script>
 </body>
 
+<script>
+  const service = require("../services/userservice");
+  const rules = require("../services/rules");
+
+  export default {
+    name: "Login",
+    components: {
+    },
+    props: {
+
+    },
+
+    data: () => ({
+      rules: rules,
+
+      valid: false,
+      busy: false,
+      failedReason: null,
+
+      email: "",
+      password: "",
+    }),
+
+
+    methods: {
+      submit: function () {
+        this.busy = true;
+        this.failedReason = null;
+
+        return service
+          .login(this.email, this.password, "")
+          .then((user) => {
+            this.$emit("successful", user);
+          })
+          .catch((ex) => {
+            if (ex === "captcha") {
+              this.failedReason = "Captcha validation failed.";
+            } else if (ex === "invalid_password") {
+              this.failedReason = "Invalid username or password.";
+            } else if (ex === "not_found") {
+              this.failedReason = "Username not found.";
+            } else if (ex === "banned") {
+              this.failedReason = "Address banned.";
+            } else {
+              this.failedReason = "Connection error.";
+            }
+          })
+          .then(() => {
+            this.busy = false;
+          });
+      }
+    }
+  };
+</script>
+
 </html>

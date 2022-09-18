@@ -1,17 +1,26 @@
 .input-text {
   border-radius: 5px;
   padding: 0 10px;
+  border: 2px solid transparent;
+  transition: .3s;
+}
+
+.input-text span {
+  font-size: 18px;
 }
 
 .input-text input {
-  font-family: 'Inter', sans-serif;
-  font-size: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
 
   padding: 0 10px;
-  
-  @apply bg-transparent text-gray-200 py-3 w-full
+
+  border: 0px solid transparent;
+
+  @apply bg-transparent text-gray-200 py-3 w-full;
 }
 
-.input-text input:focus-visible {
-  border: 0;
+.focus-input {
+  border: 2px solid #2494f4 !important;
+  transform: scale(1.2);
 }

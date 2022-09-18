@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 import ScrollToTop from './hooks/scrollToTop'
 import { useState } from 'react'
+import { StatusMember } from './components/StatusMember'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <ScrollToTop />
       <ToastContainer />
       <Header />
+      <StatusMember />
       <Router />
     </BrowserRouter>
   )
