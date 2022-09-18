@@ -1,0 +1,17 @@
+.input-text {
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+.input-text input {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+
+  padding: 0 10px;
+  
+  @apply bg-transparent text-gray-200 py-3 w-full
+}
+
+.input-text input:focus-visible {
+  border: 0;
+}
