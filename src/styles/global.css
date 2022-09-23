@@ -75,13 +75,14 @@ body {
   outline: none;
   color: white;
   -webkit-font-smoothing: antialiased;
-  background-image: url("./src/assets/img/background.png");
+  background-image: url("https://cdn.discordapp.com/attachments/792256194932375563/1021089846162366514/background.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
 
-  overflow-x: auto;
-  overflow-y: hidden;
+html {
+  font-family: "Poppins", sans-serif !important;
 }
 
 :focus-visible {
@@ -95,6 +96,12 @@ body {
   .grid-cols-3 {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
+  section {
+    margin-top: 70px;
+  }
+  body {
+    background-size: auto !important;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -105,9 +112,6 @@ body {
   .gap-5 {
     gap: 0 !important;
   }
-}
-
-@media screen and (max-width: 425px) {
 }
 
 @media screen and (max-width: 390px) {

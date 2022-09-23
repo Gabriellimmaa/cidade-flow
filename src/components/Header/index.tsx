@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import { FaBars } from 'react-icons/fa'
 import './styles.css'
@@ -12,10 +12,18 @@ import logo from '../../assets/img/banner.png'
 export default function Header() {
   const [isNavExpanded, setIsNavExpanded] = useState(false)
 
+  function hiddenNav() {
+    setIsNavExpanded(false)
+  }
+
+  function handleLogout() {
+      localStorage.clear()
+  }
+
   return (
     <nav className="navigation flex items-center bg-gray-500">
       <div className='navigation-menu flex items-center'>
-        <Link to="/" className='mr-auto'>
+        <Link to="/" onClick={hiddenNav} className='mr-auto'>
           <img className="mr-10 max-h-12" src={logo} />
         </Link>
         <ul className="navigation-menu-ul">
@@ -44,10 +52,24 @@ export default function Header() {
       <div className='navigation-menu ml-auto'>
         <ul className="navigation-menu-ul">
           <li>
-            <Link to="/login" className='p-5'>ENTRAR</Link>
+            {
+              localStorage.getItem('token') ? (
+                <span>
+                  {localStorage.getItem('email')}
+                </span>
+              ) : (
+                <Link to="/login" className='p-5'>ENTRAR</Link>
+              )
+            }
           </li>
           <li>
-            <Link to="/signup" className='pl-5 py-5'>REGISTRE-SE</Link>
+            {
+              localStorage.getItem('token') ? (
+                <Link to="/login" className='pl-5 py-5' onClick={handleLogout}>SAIR</Link>
+              ) : (
+                <Link to="/signup" className='pl-5 py-5'>REGISTRE-SE</Link>
+              )
+            }
           </li>
         </ul>
       </div>
@@ -63,31 +85,46 @@ export default function Header() {
         <div className='navigation-menu expanded'>
           <ul className="navigation-menu-ul ul-expanded">
             <li>
-              <Link to="/login" className='p-5'>ENTRAR</Link>
+              {
+                localStorage.getItem('token') ? (
+                  <span>
+                    {localStorage.getItem('email')}
+                  </span>
+
+                ) : (
+                  <Link to="/login" onClick={hiddenNav} className='p-5'>ENTRAR</Link>
+                )
+              }
             </li>
             <li>
-              <Link to="/signup" className='pl-5 py-5'>REGISTRE-SE</Link>
+              {
+                localStorage.getItem('token') ? (
+                  <Link to="/login" className='pl-5 py-5' onClick={handleLogout}>SAIR</Link>
+                ) : (
+                  <Link to="/signup" onClick={hiddenNav} className='pl-5 py-5'>REGISTRE-SE</Link>
+                )
+              }
             </li>
             <li className='flex justify-center'>
-                <div className='w-1/2 border-b-2 '></div>
+              <div className='w-1/2 border-b-2 '></div>
             </li>
             <li>
-              <Link to="/download" className='p-5 flex items-center'>
+              <Link to="/download" onClick={hiddenNav} className='p-5 flex items-center'>
                 <Icon icon="bxs:cloud-download" className='text-white mr-2 text-2xl' /> DOWNLOAD
               </Link>
             </li>
             <li>
-              <Link to="/discord" className='p-5 flex items-center'>
+              <Link to="/discord" onClick={hiddenNav} className='p-5 flex items-center'>
                 <Icon icon="akar-icons:discord-fill" className='text-white mr-2 text-2xl' /> DISCORD
               </Link>
             </li>
             <li>
-              <Link to="/sobre" className='p-5 flex items-center'>
+              <Link to="/sobre" onClick={hiddenNav} className='p-5 flex items-center'>
                 <Icon icon="simple-icons:aboutdotme" className='text-white mr-2 text-2xl' /> SOBRE
               </Link>
             </li>
             <li>
-              <Link to="/hoteis" className='p-5 flex items-center'>
+              <Link to="/hoteis" onClick={hiddenNav} className='p-5 flex items-center'>
                 <Icon icon="bxs:server" className='text-white mr-2 text-2xl' /> STATUS DO SERVIDOR
               </Link>
             </li>

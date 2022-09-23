@@ -1,0 +1,53 @@
+.modal-delete-header {
+    @apply flex items-center mb-2;
+}
+
+.modal-delete-header h3 {
+    @apply m-0;
+}
+.modal-delete-form span {
+    font-size: 14px;
+    @apply flex justify-center
+}
+.modal-delete-header button {
+    transition: .3s;
+    @apply ml-auto;
+}
+
+.modal-delete-header button:hover {
+    transform: scale(1.5);
+    text-shadow: 0 0 15px rgb(122, 122, 122), 0 0 10px rgb(129, 129, 129);
+}
+
+.modal-delete-form {
+    @apply grid gap-3;
+}
+
+.modal-delete-form input[type="password"]  {
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    margin: 5px 0;
+    @apply border-b border-gray-600;
+}
+
+.modal-delete-form input[type="password"]::placeholder {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    @apply text-gray-200;
+}
+
+.modal-delete-form input[type="submit"] {
+    color: #B54544;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    padding: 10px 0;
+    width: 100%;
+    transition: .3s;
+}
+
+.modal-delete-form input[type="submit"]:hover {
+    cursor: pointer;
+    color: #cf4441;
+    text-shadow: 0 0 15px rgb(181, 69, 68, 1), 0 0 10px rgb(181, 69, 68, 1);
+}

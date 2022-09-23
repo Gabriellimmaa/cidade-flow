@@ -15,8 +15,6 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <ToastContainer />
-      <Header />
-      <StatusMember />
       <Router />
     </BrowserRouter>
   )

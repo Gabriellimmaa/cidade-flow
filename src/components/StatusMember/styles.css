@@ -1,41 +1,68 @@
 .status-member {
-    position: fixed;
-    margin: 0 20px 0 0;
-    top: 90px;
-    right: 0;
+  position: fixed;
+  margin: 0 20px 0 0;
+  top: 90px;
+  right: 0;
 
-    height: 52px;
-    gap: 10px;
-    border-radius: 6px;
+  height: 52px;
+  gap: 10px;
+  border-radius: 6px;
 
-    background-color: rgb(46, 48, 51, 0.60);
-    padding: 10px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background-color: rgb(46, 48, 51, 0.6);
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .status-member .circle {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
 
-    @apply bg-green-500
+  @apply bg-green-500;
 }
 
 .status-member p {
-    margin: 0;
+  margin: 0;
 }
 
 .status-member p:nth-child(2) {
-    font-family: 'Inter', sans-serif;
-    font-weight: bold;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
 
-    @apply text-gray-200
+  @apply text-gray-200;
 }
 
 .status-member p:nth-child(3) {
-    font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 
-    @apply text-gray-200
+  @apply text-gray-200;
+}
+
+@media screen and (max-width: 1440px) {
+}
+
+@media screen and (max-width: 1024px) {
+  .status-member {
+    top: 75px;
+    margin: 0 5px 0 0;
+  }
+
+  .status-member p:nth-child(2) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 425px) {
+    .status-member {
+        height: 30px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    
 }
