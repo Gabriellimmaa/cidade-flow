@@ -1,7 +1,7 @@
 # 💻 Cidade FLOW
 
 <h1 align="center">
-  <img src="public/assets/preview.png">
+  <img src="public/preview.png">
 </h1>
 
 <h4 align="center"><a href="https://gabriellimmaa.github.io/cidade-flow/">Click to visit website</a></h4>
@@ -39,6 +39,25 @@ For the development of this site I used the following technologies:
 ## ⚙️ Description
 
 This project was developed for a server called Cidade Flow whose proposed game was 3DXChat.
+
+---
+## 🔧 Getting started
+
+1. Clone the repository
+```bash
+git clone https://github.com/Gabriellimmaa/cidade-flow.git
+```
+
+2. Install dependencies
+
+```bash
+npm install
+```
+
+3 Run the project
+```bash
+npm run dev
+```
 
 ---
 
